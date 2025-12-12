@@ -1,0 +1,77 @@
+/* Page layout */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Form container */
+form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(82, 4, 249, 0.793);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #2d07e9;
+  font-size: 14px;
+}
+
+/* Inputs, select, textarea */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Validation error messages */
+div[style*="color:red"] {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+/* Submit button */
+button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #a8a8a8;
+  cursor: not-allowed;
+}
+
+/* Hover effect */
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}

@@ -1,0 +1,77 @@
+<h2>Venue Booking Form</h2>
+
+<form #venueForm="ngForm" (ngSubmit)="onSubmit(venueForm)">
+
+  <!-- Venue Name -->
+  <label>Venue Name:</label>
+  <input name="venueName" ngModel required #venueName="ngModel" />
+  <div *ngIf="venueName.invalid && venueName.touched" style="color:red;">
+    Venue Name is required
+  </div>
+
+  <!-- City -->
+  <label>City:</label>
+  <input name="city" ngModel required #city="ngModel" />
+  <div *ngIf="city.invalid && city.touched" style="color:red;">
+    City is required
+  </div>
+
+  <!-- Address -->
+  <label>Address:</label>
+  <textarea name="address" ngModel required #address="ngModel"></textarea>
+  <div *ngIf="address.invalid && address.touched" style="color:red;">
+    Address is required
+  </div>
+
+  <!-- Contact Person -->
+  <label>Contact Person:</label>
+  <input name="contactPerson" ngModel required #contactPerson="ngModel" />
+  <div *ngIf="contactPerson.invalid && contactPerson.touched" style="color:red;">
+    Contact Person is required
+  </div>
+
+  <!-- Email -->
+  <label>Email:</label>
+  <input type="email" name="email" ngModel required email #email="ngModel" />
+  <div *ngIf="email.invalid && email.touched" style="color:red;">
+    Enter a valid email
+  </div>
+
+  <!-- Phone -->
+  <label>Phone:</label>
+  <input type="tel" name="phone" ngModel required minlength="10" maxlength="10" pattern="[0-9]*" #phone="ngModel" />
+  <div *ngIf="phone.invalid && phone.touched" style="color:red;">
+    Phone must be 10 digits
+  </div>
+
+  <!-- Capacity -->
+  <label>Capacity:</label>
+  <input type="number" name="capacity" ngModel required min="10" #capacity="ngModel" />
+  <div *ngIf="capacity.invalid && capacity.touched" style="color:red;">
+    Capacity must be at least 10
+  </div>
+
+  <!-- Booking Date -->
+  <label>Booking Date:</label>
+  <input type="date" name="bookingDate" ngModel required #bookingDate="ngModel" />
+  <div *ngIf="bookingDate.invalid && bookingDate.touched" style="color:red;">
+    Booking Date is required
+  </div>
+
+  <!-- Booking Time -->
+  <label>Booking Time:</label>
+  <input type="time" name="bookingTime" ngModel required #bookingTime="ngModel" />
+  <div *ngIf="bookingTime.invalid && bookingTime.touched" style="color:red;">
+    Booking Time is required
+  </div>
+
+  <!-- Purpose -->
+  <label>Purpose:</label>
+  <input name="purpose" ngModel required #purpose="ngModel" />
+  <div *ngIf="purpose.invalid && purpose.touched" style="color:red;">
+    Purpose is required
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" [disabled]="venueForm.invalid">Submit</button>
+</form>

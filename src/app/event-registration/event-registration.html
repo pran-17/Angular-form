@@ -1,0 +1,81 @@
+<h2>Event Registration Form</h2>
+<form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)">
+  
+  <!-- Full Name -->
+  <label>Full Name:</label>
+  <input name="fullName" ngModel required #fullName="ngModel" />
+  <div *ngIf="fullName.invalid && fullName.touched" style="color:red">
+    Name is required
+  </div>
+
+  <!-- Email -->
+  <label>Email:</label>
+  <input type="email" name="email" ngModel required #email="ngModel" />
+  <div *ngIf="email.invalid && email.touched" style="color:red">
+    Valid email required
+  </div>
+
+  <!-- Phone -->
+  <label>Phone:</label>
+  <input type="tel" name="phone" ngModel required minlength="10" maxlength="10" pattern="[0-9]*" #phone="ngModel" />
+  <div *ngIf="phone.invalid && phone.touched" style="color:red">
+    Enter a valid 10-digit phone
+  </div>
+
+  <!-- Event Name -->
+  <label>Event Name:</label>
+  <input name="eventName" ngModel required #eventName="ngModel" />
+  <div *ngIf="eventName.invalid && eventName.touched" style="color:red">
+    Event name is required
+  </div>
+
+  <!-- Event Type -->
+  <label>Event Type:</label>
+  <select name="eventType" ngModel required #eventType="ngModel">
+    <option value="">Select</option>
+    <option>Conference</option>
+    <option>Workshop</option>
+    <option>Seminar</option>
+  </select>
+  <div *ngIf="eventType.invalid && eventType.touched" style="color:red">
+    Event type is required
+  </div>
+
+  <!-- Attendees -->
+  <label>Number of Attendees:</label>
+  <input type="number" name="attendees" ngModel required min="1" #attendees="ngModel" />
+  <div *ngIf="attendees.invalid && attendees.touched" style="color:red">
+    Must have at least 1 attendee
+  </div>
+
+  <!-- Date -->
+  <label>Date:</label>
+  <input type="date" name="date" ngModel required #date="ngModel" />
+  <div *ngIf="date.invalid && date.touched" style="color:red">
+    Date is required
+  </div>
+
+  <!-- Time -->
+  <label>Time:</label>
+  <input type="time" name="time" ngModel required #time="ngModel" />
+  <div *ngIf="time.invalid && time.touched" style="color:red">
+    Time is required
+  </div>
+
+  <!-- Organization -->
+  <label>Organization:</label>
+  <input name="organization" ngModel required #organization="ngModel" />
+  <div *ngIf="organization.invalid && organization.touched" style="color:red">
+    Organization is required
+  </div>
+
+  <!-- Special Requests -->
+  <label>Special Requests:</label>
+  <textarea name="requests" ngModel required #requests="ngModel"></textarea>
+  <div *ngIf="requests.invalid && requests.touched" style="color:red">
+    Special requests are required
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" [disabled]="eventForm.invalid">Submit</button>
+</form>
