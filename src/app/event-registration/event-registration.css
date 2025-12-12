@@ -1,68 +1,97 @@
-/* Page layout */
-h2 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 20px;
+/* ----------- Light Gray Page Background ----------- */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;   /* Light Gray Background */
   font-family: Arial, sans-serif;
 }
 
-/* Form container */
-form {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #f3f1f1;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(23, 15, 232, 0.1);
+/* ----------- Page Title ----------- */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  padding-top: 20px;
+  font-size: 26px;
+  letter-spacing: 1px;
 }
 
-/* Labels */
+/* ----------- Form Container (Light Blue Box) ----------- */
+form {
+  width: 420px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #e3f2fd;  /* Light Blue Box */
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------- Labels ----------- */
 label {
   display: block;
-  margin-top: 12px;
+  margin-top: 15px;
   font-weight: bold;
-  color: #333;
-  font-size: 14px;
+  color: #2c3e50;
+  font-size: 15px;
 }
 
-/* Inputs, select, textarea */
+/* ----------- Inputs, Select, Textarea ----------- */
 input,
 select,
 textarea {
   width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  border: 1px solid #0d0d0d;
-  border-radius: 6px;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #555;
+  border-radius: 8px;
   font-size: 14px;
-  font-family: Arial, sans-serif;
   box-sizing: border-box;
+  background: #ffffff;
+  transition: 0.3s;
 }
 
+/* Input Focus Effect */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 6px rgba(106, 17, 203, 0.4);
+  outline: none;
+}
+
+/* Textarea Settings */
 textarea {
   resize: vertical;
-  min-height: 60px;
+  min-height: 70px;
 }
 
-/* Validation error messages */
+/* ----------- Validation Error Messages ----------- */
 div[style*="color:red"] {
   font-size: 12px;
   margin-top: 4px;
   margin-bottom: 2px;
 }
 
-/* Submit button */
+/* ----------- Submit Button ----------- */
 button {
-  margin-top: 18px;
+  margin-top: 22px;
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #007bff;
+  padding: 12px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease;
+  letter-spacing: 1px;
 }
 
 /* Disabled button */
@@ -73,5 +102,6 @@ button:disabled {
 
 /* Hover effect */
 button:hover:not(:disabled) {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #dd2476, #ff512f);
+  transform: scale(1.03);
 }
